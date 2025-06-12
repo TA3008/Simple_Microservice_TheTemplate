@@ -3,12 +3,13 @@ using PlatformService.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("InMem"));
+builder.Services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("InMem")); // Inmemory DB to seed demo data
 builder.Services.AddControllers();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); // Register Automapper
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IPlatfromRepository, PlatformRepository>();
+builder.Services.AddScoped<IPlatformRepository, PlatformRepository>();
 
 var app = builder.Build();
 

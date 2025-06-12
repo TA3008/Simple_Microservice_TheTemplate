@@ -2,7 +2,7 @@
 
 namespace PlatformService.Data
 {
-    public class PlatformRepository : IPlatfromRepository
+    public class PlatformRepository : IPlatformRepository
     {
         private readonly AppDbContext _context;
 
@@ -25,7 +25,7 @@ namespace PlatformService.Data
             return _context.Platforms.ToList();
         }
 
-        public Platform GetPlatfromById(int id)
+        public Platform GetPlatformById(int id)
         {
             return _context.Platforms.FirstOrDefault(p => p.Id == id);
         }

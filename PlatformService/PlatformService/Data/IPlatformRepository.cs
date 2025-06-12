@@ -2,11 +2,11 @@
 
 namespace PlatformService.Data
 {
-    public interface IPlatfromRepository
+    public interface IPlatformRepository
     {
         bool SaveChanges();
         IEnumerable<Platform> GetAllPlatfroms();
-        Platform GetPlatfromById(int id);
+        Platform GetPlatformById(int id);
         void CreatePlatform(Platform plat);
     }
 }
