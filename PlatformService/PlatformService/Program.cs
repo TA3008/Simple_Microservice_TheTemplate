@@ -8,6 +8,7 @@ builder.Services.AddControllers();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); // Register Automapper
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.WebHost.UseUrls("http://0.0.0.0:80"); // Expose port 80 to Docker by listening on all IPs
 
 builder.Services.AddScoped<IPlatformRepository, PlatformRepository>();
 
